@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachad EL BARAKA - Portfolio</title>
+     <link rel="icon" type="image" href="LOGOFARES.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+         <nav>
+              <div class="logo">Rachad EL BARAKA</div>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                  <li><a href="#portfolio">Portfolio</a></li>
+                <li class="menu-competences"><a href="#competences">Compétences</a>
+                    <ul class="sous-menu">
+                        <li><a href="#html">HTML</a></li>
+                        <li><a href="#css">CSS</a></li>
+                        <li><a href="#javascript">JavaScript</a></li>
+                        <li><a href="#php">PHP</a></li>
+                        <li><a href="#mysql">MySQL</a></li>
+                        <li><a href="#git">Git</a></li>
+                        <li><a href="#linux">Linux</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil">
+        <div class="texteaccueil">
+            <h1>Rachad EL BARAKA</h1>
+             <p>Étudiant en BTS SIO - SLAM</p>
+            <p>
+                Bonjour, je suis EL BARAKA Rachad, passionné par la technologie et le développement web. Actuellement étudiant en BTS SIO, spécialité SLAM, 
+                je me spécialise dans la conception de solutions logicielles et la création d'applications web modernes et performantes. Mon objectif est de mettre
+                 mes compétences en développement, en programmation et en gestion de projets au service d'entreprises innovantes, tout en continuant à enrichir mes connaissances des 
+                 technologies émergentes. 
+                Mon parcours et ma détermination me permettent de relever des défis techniques et de participer activement à la transformation numérique.</p>
+        </div>
+    </section>
+
+    <section id="apropos">
+         <h2>À propos</h2>
+        <div class="contenuapropos">
+            
+            <p>
+                
+            </p>
+
+            <div class="cv-section">
+                <div class="cv-bloc">
+                    <h4>Formation</h4>
+                    <ul>
+                        <li>2024-2026 : BTS SIO  - Simone Weil - </li>
+                        <li>2022-2024 : Bac STMG - Honoré d'Urfé</li>
+                    </ul>
+                
+                </div>
+                
+        </div>
+        <a href="cv.pdf" target="_blank" class="boutoncv">Mon CV</a>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+         <div class="carousel-container">
+            <div class="carousel">
+                <div class="carteimage">
+                    <img src="html.png" alt="Projet 1">
+                    <p>Création avec du HTML, JavaScript et du CSS d'un site qui a pour thème une passion ou une envie de notre part.</p>
+                </div>
+                <div class="carteimage">
+                    <img src="javascript.png" alt="Projet 2">
+                    <p>Exercices sur le DOM en JavaScript pour modifier et interagir avec les éléments d'une page web.</p>
+                </div>
+                <div class="carteimage">
+                    <img src="linux.png" alt="Projet 3">
+                    <p>Exercice TP Samba pour configurer le partage de fichiers entre systèmes Linux et Windows, permettant d'améliorer la gestion des ressources en réseau.</p>
+                </div>
+            </div>
+             <button id="prev">&#10094;</button>
+            <button id="next">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="competences">
+        <h2>Compétences</h2>
+        <div class="listecompetences">
+            <div class="competence">
+                HTML
+                <div class="details">Création de pages web et structure de base d'un site</div>
+            </div>
+             <div class="competence">
+                CSS
+                <div class="details">Mise en forme des pages afin de rendre les sites plus plaisant</div>
+            </div>
+            <div class="competence">
+                JavaScript
+                <div class="details">Manipulation du DOM et création d'interactivité</div>
+            </div>
+            <div class="competence">
+                PHP
+                <div class="details">Gestion des formulaires et des bases de données</div>
+            </div>
+            <div class="competence">
+                MySQL
+                <div class="details">Création et gestion de bases de données </div>
+             </div>
+            <div class="competence">
+                Git
+                <div class="details">Collaboration avec professeurs & élèves sur des projets</div>
+            </div>
+            <div class="competence">
+                Linux
+                <div class="details">Configuration et gestion des systèmes</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Pour me</p>
+        <form id="formulairecontact">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
+             <label for="courriel">Email :</label>
+            <input type="email" id="courriel" name="courriel" placeholder="Votre email" required />
+             <label for="message">Message :</label>
+            <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
+             <button type="submit">Envoyer</button>
+            <div class="infos-contact">
+                <p><strong>Téléphone :</strong> 07 66 06 58 08</p>
+                <p><strong>Email :</strong> <a href="mailto:rachad@gmail.com">rachadelbaraka3@gmail.com</a></p>
+            </div>
+        </form>
+    </section>
+
+    
+
+    <script src="index.js"></script>
+</body>
+
+</html>
