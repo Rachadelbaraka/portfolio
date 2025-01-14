@@ -1,30 +1,39 @@
-document.getElementById("formulairecontact").addEventListener("submit", function(event) {
+// Gestion du formulaire de contact
+document.getElementById("formulairecontact").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const nom = document.getElementById("nom").value;
-    const email = document.getElementById("courriel").value;
-    const message = document.getElementById("message").value;
+    const nom = document.getElementById("nom").value.trim();
+    const email = document.getElementById("courriel").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-    if (nom && email && message) {
-        alert(`Merci ${nom} pour votre message ! Nous vous répondrons bientot.`);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (nom && emailRegex.test(email) && message) {
+        alert(`Merci ${nom} pour votre message ! Nous vous répondrons bientôt.`);
         this.reset();
     } else {
-        alert("Vuillez remplir tout les champs.");
+        alert("Veuillez remplir tous les champs avec des informations valides.");
     }
 });
 
-let bouton = document.querySelector("button");
-bouton.addEventListener("mouseover", () => bouton.style.transform = "scale(1.1)");
-bouton.addEventListener("mouseout", () => bouton.style.transform = "scale(1)");
+// Effet d'agrandissement sur les boutons
+document.querySelectorAll("button").forEach(bouton => {
+    bouton.addEventListener("mouseover", () => bouton.style.transform = "scale(1.1)");
+    bouton.addEventListener("mouseout", () => bouton.style.transform = "scale(1)");
+});
 
+// Gestion des détails des compétences
 document.querySelectorAll(".competence").forEach(comp => {
     comp.addEventListener("click", () => {
-        let details = comp.querySelector(".details");
-        details.style.display = details.style.display === "block" ? "none" : "block";
+        const details = comp.querySelector(".details");
+        if (details) {
+            details.style.transition = "all 0.3s ease";
+            details.style.display = details.style.display === "block" ? "none" : "block";
+        }
     });
 });
 
-
+// Carousel Logic
 let indexActuel = 0;
 const images = document.querySelectorAll(".carousel .carteimage");
 const totalImages = images.length;
@@ -59,54 +68,13 @@ document.getElementById("prev").addEventListener("click", () => {
     demarrerAutoSlide();
 });
 
-demarrerAutoSlide();
-afficherImage(indexActuel);
-
-let currentIndex = 0;
-const carrouselImages = document.querySelectorAll('.carrousel img');
-const totalCarrouselImages = carrouselImages.length;
-let intervalId;
-
-function showImage(index) {
-    carrouselImages.forEach((img, i) => {
-        img.classList.remove('active');
-        if (i === index) {
-            img.classList.add('active');
-        }
-    });
+// Initialisation du carrousel
+if (totalImages > 0) {
+    demarrerAutoSlide();
+    afficherImage(indexActuel);
 }
 
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalCarrouselImages;
-    showImage(currentIndex);
-}
-
-function previousSlide() {
-    currentIndex = (currentIndex - 1 + totalCarrouselImages) % totalCarrouselImages;
-    showImage(currentIndex);
-}
-
-function startAutoSlide() {
-    intervalId = setInterval(nextSlide, 5000);
-}
-
-function stopAutoSlide() {
-    clearInterval(intervalId);
-}
-
-document.querySelector('.prev').addEventListener('click', () => {
-    stopAutoSlide();
-    previousSlide();
-    startAutoSlide();
+// Carrousel - Animation fluide pour les images (si applicable)
+document.querySelectorAll(".carousel-container img").forEach(img => {
+    img.style.transition = "opacity 0.5s ease";
 });
-
-document.querySelector('.next').addEventListener('click', () => {
-    stopAutoSlide();
-    nextSlide();
-    startAutoSlide();
-});
-
-showImage(currentIndex);
-startAutoSlide();
-
-
